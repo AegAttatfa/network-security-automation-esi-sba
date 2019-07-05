@@ -2,7 +2,12 @@
 
 For better understood you have to read this file
 
-Good Luck
+happey reading 
 
-Hi
-ki dayra el haya
+# Install the dependencies
+
+To Install all the dependency that I used in this porject 
+Run This command
+
+pip3 install -r requirements
+

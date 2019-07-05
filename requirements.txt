@@ -1,0 +1,3 @@
+django
+django-netjsongraph
+django-widget-tweaks
