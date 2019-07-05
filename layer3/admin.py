@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Rule
+
+
+class RuleAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Rule, RuleAdmin)

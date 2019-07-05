@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'openwisp_network_topology',
     'openwisp_users',
     'rest_framework',
+    'widget_tweaks',
     # admin
     'django.contrib.admin',
     'network_admin',

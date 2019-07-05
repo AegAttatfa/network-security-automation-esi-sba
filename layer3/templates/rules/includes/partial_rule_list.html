@@ -1,0 +1,26 @@
+{% for rule in rules %}
+  <tr>
+    <td>{{ rule.id }}</td>
+    <td>{{ rule.number }}</td>
+    <td>{{ rule.sourceIP }}</td>
+    <td>{{ rule.destinationIP }}</td>
+    <td>{{ rule.protocol }}</td>
+
+    <td style="width: 150px">
+      <button type="button"
+              class="btn btn-warning btn-sm js-update-rule"
+              data-url="{% url 'rule_update' rule.pk %}">
+        <span class="glyphicon glyphicon-pencil"></span> Edit
+      </button>
+      <button type="button"
+              class="btn btn-danger btn-sm js-delete-rule"
+              data-url="{% url 'rule_delete' rule.id %}">
+        <span class="glyphicon glyphicon-trash"></span> Delete
+      </button>
+    </td>
+  </tr>
+{% empty %}
+  <tr>
+    <td colspan="8" class="text-center bg-warning">No rule</td>
+  </tr>
+{% endfor %}
