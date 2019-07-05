@@ -1,6 +1,6 @@
 {% for rule in rules %}
   <tr>
-    <td>{{ rule.id }}</td>
+    <td>{{ rule.pk }}</td>
     <td>{{ rule.number }}</td>
     <td>{{ rule.sourceIP }}</td>
     <td>{{ rule.destinationIP }}</td>
@@ -8,13 +8,14 @@
 
     <td style="width: 150px">
       <button type="button"
+              name="edit"
               class="btn btn-warning btn-sm js-update-rule"
               data-url="{% url 'rule_update' rule.pk %}">
         <span class="glyphicon glyphicon-pencil"></span> Edit
       </button>
       <button type="button"
               class="btn btn-danger btn-sm js-delete-rule"
-              data-url="{% url 'rule_delete' rule.id %}">
+              data-url="{% url 'rule_delete' rule.pk %}">
         <span class="glyphicon glyphicon-trash"></span> Delete
       </button>
     </td>

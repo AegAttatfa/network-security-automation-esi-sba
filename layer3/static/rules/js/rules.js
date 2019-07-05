@@ -14,7 +14,6 @@ $(function () {
         $("#modal-rule").modal("show");
       },
       success: function (data) {
-        console.log("loadForm");
         $("#modal-rule .modal-content").html(data.html_form);
       }
     });
@@ -31,6 +30,9 @@ $(function () {
         if (data.form_is_valid) {
           $("#rule-table tbody").html(data.html_rule_list);
           $("#modal-rule").modal("hide");
+          $('#message').text(data.message);
+
+
         }
         else {
           $("#modal-rule .modal-content").html(data.html_form);
@@ -47,6 +49,7 @@ $(function () {
   $(".js-create-rule").click(loadForm);
   $("#modal-rule").on("submit", ".js-rule-create-form", saveForm);
 
+
   // Update rule
   $("#rule-table").on("click", ".js-update-rule", loadForm);
   $("#modal-rule").on("submit", ".js-rule-update-form", saveForm);
@@ -54,5 +57,6 @@ $(function () {
   // Delete rule
   $("#rule-table").on("click", ".js-delete-rule", loadForm);
   $("#modal-rule").on("submit", ".js-rule-delete-form", saveForm);
+
 
 });

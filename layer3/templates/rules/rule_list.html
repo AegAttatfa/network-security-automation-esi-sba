@@ -6,11 +6,14 @@
   <script src="{% static 'rules/js/rules.js' %}"></script>
 {% endblock %}
 
+
 {% block content %}
+
+<p id="message"></p>
   <h1 class="page-header">Rules</h1>
 
   <p>
-    <button type="button" class="btn btn-primary js-create-rule" data-url="{% url 'rule_create' %}">
+    <button type="button"  name="create" class="btn btn-primary js-create-rule" data-url="{% url 'rule_create' %}">
       <span class="glyphicon glyphicon-plus"></span>
       New Rule
     </button>
