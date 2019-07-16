@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content  %}
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <h2>Switches</h2>
+    <div class="devices">
+        {% block listDevics %}
+            {% for device in devices %}
+                <ul>
+                    <li>
+                        <a href="{% url 'device_get_interfaces' device.hostname %}">{{ device.ip_vlan }}
+                        </a></li>
+                    <li><a href="#">Winterthur</a></li>
+                    <li><a href="#">Lausanne</a></li>
+                    <li><a href="#">Lucerne</a></li>
+                </ul>
+            {% endfor %}
+            </div>
+        {% endblock %}
+{% endblock %}

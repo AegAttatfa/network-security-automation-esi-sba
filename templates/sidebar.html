@@ -10,12 +10,12 @@
             <a href="#"><i class="fa fa-fw fa-home"></i>Controller(Home)</a>
         </li>
          <li>
-            <a href="#"><i class="fas fa-chart-network"></i>Topology</a>
+            <a href="{% url 'mytopology' %}"><i class="fas fa-chart-network"></i>Topology</a>
         </li>
         <li>
             <a href="#switches" data-toggle="collapse" aria-expanded="false">Switches</a>
             <ul class="collapse list-unstyled" id="switches">
-                <li><a href="#">Port security</a></li>
+                <li><a href="{% url 'device_list_view' %}">Port security</a></li>
                 <li><a href="#">Arp</a></li>
                 <li><a href="#">STP</a></li>
             </ul>

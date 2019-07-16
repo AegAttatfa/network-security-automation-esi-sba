@@ -62,5 +62,6 @@ def rule_delete(request, pk):
         })
     else:
         context = {'rule': rule}
-        data['html_form'] = render_to_string('rules/includes/partial_rule_delete.html', context, request=request)
+        data['html_form'] = render_to_string('rules/includes/partial_rule_delete.html',
+                                             context, request=request)
     return JsonResponse(data)

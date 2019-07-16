@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% block interfaces %}
+
+  <h1 class="page-header">Interfaces</h1>
+  <table class="table" id="interface-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>name_int</th>
+        <th>Mac Address</th>
+        <th>Status</th>
+        <th>Mode</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for int in interfaces%}
+        <tr>
+        <td>{{ int.}}</td>
+        <td>{{ int.name_int }}</td>
+        <td>{{ int.mac }}</td>
+        <td>{{ int.status}}</td>
+        <td>{{ int.mode }}</td>
+      </tr>
+    {% empty %}
+    <tr>
+        <td colspan="8" class="text-center bg-warning">No rule</td>
+    </tr>
+{% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% endblock %}

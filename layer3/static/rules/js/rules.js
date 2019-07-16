@@ -30,7 +30,9 @@ $(function () {
         if (data.form_is_valid) {
           $("#rule-table tbody").html(data.html_rule_list);
           $("#modal-rule").modal("hide");
-          $('#message').text(data.message);
+            setTimeout(function() {
+            $('#message').text(data.message);
+          }, 3000);
 
 
         }

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # admin
     'django.contrib.admin',
     'network_admin',
+    'mytopology',
     'layer2',
     'layer3',
     'vpn',

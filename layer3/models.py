@@ -1,6 +1,6 @@
 from django.db import models
-
-# Create your models here.
+from django.core.exceptions import ValidationError
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Rule(models.Model):
@@ -11,10 +11,15 @@ class Rule(models.Model):
     ('ICMP', 'ICMP')
     )
 
-    number = models.IntegerField(null=False)
-    sourceIP = models.CharField(max_length=50)
-    destinationIP = models.CharField(max_length=50)
+    number = models.IntegerField(null=False, unique=True,
+                                validators=[MinValueValidator(100), MaxValueValidator(199)])
+
+    sourceIP =  models.GenericIPAddressField(protocol='IPv4')
+    destinationIP =  models.GenericIPAddressField(protocol='IPv4')
+
     protocol = models.CharField(max_length=6, choices=PROTOCOL)
 
+
+    
     def __str__(self):
         return str(self.number)
