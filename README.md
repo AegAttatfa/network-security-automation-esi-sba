@@ -1,8 +1,8 @@
 # This is our project for this year
-
-For better understood you have to read this file
-
-happey reading 
+This project amais to imporve the scalabilty of the enterprise network by helps network enginners to config and monitor, manage thier entire network, avoiding mistypting commands using web appplication that make it easy.
+# Technologies
+* Django
+* Netmiko
 
 # Install the dependencies
 
